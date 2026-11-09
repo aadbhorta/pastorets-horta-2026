@@ -1,0 +1,630 @@
+<!doctype html>
+<html lang="ca">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Els Pastorets 2026 · Horta</title>
+<meta name="description" content="Els Pastorets al teatre del Col·legi Salesià Sant Joan Bosco d'Horta. Programa de mà, sessions, repartiment, equip i patrocinadors.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;800&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --nit:#0f1a33; --nit2:#17264a; --or:#e5b64b; --or2:#f4d58a;
+    --vermell:#9e1b23; --paper:#fbf6ec; --tinta:#1d1d1f; --gris:#6b6b72;
+    --linia:#e6dcc6; --radi:14px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:Inter,system-ui,sans-serif;color:var(--tinta);background:var(--paper);line-height:1.6}
+  h1,h2,h3{font-family:"Playfair Display",Georgia,serif;line-height:1.15;margin:0 0 .5em}
+  a{color:var(--vermell)}
+  img{max-width:100%;display:block}
+  [data-img]{border-radius:var(--radi);overflow:hidden}
+  [data-img] img{width:100%;height:100%;object-fit:cover;object-position:top}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 16px}
+
+  /* Navegació */
+  header.nav{position:sticky;top:0;z-index:50;background:rgba(15,26,51,.96);backdrop-filter:blur(6px)}
+  .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .logo{color:var(--or);font-family:"Playfair Display",serif;font-weight:800;font-size:1.25rem;text-decoration:none}
+  .nav ul{list-style:none;margin:0;padding:0;display:flex;gap:22px}
+  .nav ul a{color:#e9e6dd;text-decoration:none;font-size:.92rem}
+  .nav ul a:hover{color:var(--or)}
+  .burger{display:none;background:none;border:0;color:#fff;font-size:1.6rem;cursor:pointer}
+  @media (max-width:820px){
+    .burger{display:block}
+    .nav ul{display:none;position:absolute;top:60px;left:0;right:0;flex-direction:column;gap:0;background:var(--nit)}
+    .nav ul.open{display:flex}
+    .nav ul a{display:block;padding:14px 16px;border-top:1px solid #23345c}
+  }
+
+  /* Portada */
+  .hero{background:radial-gradient(ellipse at top,var(--nit2),var(--nit) 70%);color:#fff;position:relative;overflow:hidden}
+  .hero::before{content:"";position:absolute;inset:0;background-image:radial-gradient(1.5px 1.5px at 20% 30%,#fff8,transparent),radial-gradient(1px 1px at 70% 20%,#fff9,transparent),radial-gradient(1.5px 1.5px at 85% 60%,#fff7,transparent),radial-gradient(1px 1px at 40% 75%,#fff8,transparent),radial-gradient(1px 1px at 10% 85%,#fff6,transparent),radial-gradient(2px 2px at 55% 45%,#fffa,transparent);pointer-events:none}
+  .hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding-top:56px;padding-bottom:64px;position:relative}
+  .eyebrow{color:var(--or);text-transform:uppercase;letter-spacing:.18em;font-size:.78rem;font-weight:700}
+  .hero h1{font-size:clamp(2.6rem,7vw,4.6rem);color:var(--or2);margin:.15em 0 .2em}
+  .hero .sub{font-size:1.15rem;color:#d7d9e3;max-width:34em}
+  .hero .meta{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0}
+  .chip{border:1px solid #ffffff33;border-radius:999px;padding:6px 14px;font-size:.88rem;color:#eee}
+  .btn{display:inline-block;background:var(--or);color:var(--nit);font-weight:700;padding:13px 24px;border-radius:999px;text-decoration:none;border:0;cursor:pointer;font-size:1rem}
+  .btn:hover{background:var(--or2)}
+  .btn.ghost{background:transparent;color:#fff;border:1px solid #ffffff55;margin-left:8px}
+  .countdown{display:flex;gap:12px;margin-top:28px}
+  .countdown div{background:#ffffff10;border:1px solid #ffffff22;border-radius:10px;padding:8px 12px;text-align:center;min-width:64px}
+  .countdown b{display:block;font-size:1.5rem;color:var(--or2);font-family:"Playfair Display",serif}
+  .countdown span{font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;color:#c8cbd6}
+  .poster{cursor:zoom-in;aspect-ratio:1414/2000;overflow:hidden;border-radius:var(--radi);box-shadow:0 20px 60px #0009}
+  @media (max-width:820px){.hero .wrap{grid-template-columns:1fr}.poster{max-width:360px;margin:0 auto}}
+
+  /* Seccions */
+  section{padding:72px 0}
+  section.alt{background:#fff}
+  section.fosc{background:var(--nit);color:#eee}
+  section.fosc h2{color:var(--or2)}
+  .sec-head{text-align:center;max-width:720px;margin:0 auto 40px}
+  .sec-head h2{font-size:clamp(1.9rem,4vw,2.6rem)}
+  .sec-head p{color:var(--gris)}
+  section.fosc .sec-head p{color:#b9bccb}
+  .ornament{color:var(--or);font-size:1.3rem;letter-spacing:.4em}
+
+  /* Placeholder d'imatge */
+  .ph{background:repeating-linear-gradient(45deg,#efe6d2,#efe6d2 10px,#f6efdf 10px,#f6efdf 20px);border:2px dashed #c9b88f;border-radius:var(--radi);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:14px;color:#7a6a45;font-size:.88rem;font-weight:500;width:100%;height:100%}
+  .ph::before{content:"📷";display:block;font-size:1.6rem;margin-bottom:6px}
+  .ph.logo-ph::before{content:"🏷️"}
+  .ph > span{display:block}
+  .fosc .ph,.hero .ph{background:repeating-linear-gradient(45deg,#1c2b52,#1c2b52 10px,#203160 10px,#203160 20px);border-color:#4a5f95;color:#c9d2ee}
+
+  /* L'obra */
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+  @media (max-width:820px){.grid2{grid-template-columns:1fr}}
+  .fitxa{display:grid;grid-template-columns:auto 1fr;gap:6px 18px;margin-top:20px;font-size:.95rem}
+  .fitxa dt{color:var(--gris)}
+  .fitxa dd{margin:0;font-weight:500}
+
+  /* Sessions */
+  .sessions{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,420px));justify-content:center;gap:18px}
+  .sessio .estat.gratis{color:#2f7d32}
+  .sessio{background:#fff;border:1px solid var(--linia);border-radius:var(--radi);padding:22px;display:flex;flex-direction:column;gap:6px}
+  .sessio .dia{font-family:"Playfair Display",serif;font-size:1.5rem;color:var(--vermell)}
+  .sessio .hora{font-weight:700}
+  .sessio .estat{font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#2f7d32}
+  .sessio .estat.poques{color:#b26a00}
+  .sessio .estat.esgotat{color:var(--gris)}
+  .sessio .btn{margin-top:auto;text-align:center;padding:10px 18px;font-size:.92rem}
+  .preus{margin-top:28px;text-align:center;color:var(--gris)}
+
+  /* Programa / escenes */
+  .escenes{counter-reset:esc;max-width:760px;margin:0 auto;list-style:none;padding:0}
+  .escenes li{position:relative;padding:18px 0 18px 84px;border-bottom:1px solid #ffffff1a}
+  .escenes li::before{content:attr(data-n);position:absolute;left:0;top:16px;min-width:44px;height:44px;padding:0 6px;border-radius:22px;font-size:.8rem !important;border:1px solid var(--or);color:var(--or);display:flex;align-items:center;justify-content:center;font-family:"Playfair Display",serif;font-size:.95rem}
+  .escenes h3{color:#fff;font-size:1.2rem;margin-bottom:.2em}
+  .escenes p{margin:0;color:#b9bccb}
+  .acte{color:var(--or);text-transform:uppercase;letter-spacing:.15em;font-size:.78rem;font-weight:700;margin:28px 0 4px}
+
+  /* Repartiment */
+  .filtres{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-bottom:30px}
+  .filtres button{background:#fff;border:1px solid var(--linia);border-radius:999px;padding:7px 16px;cursor:pointer;font:inherit;font-size:.9rem}
+  .filtres button.on{background:var(--nit);color:#fff;border-color:var(--nit)}
+  .persones{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:22px}
+  .persona{text-align:center}
+  .persona .foto{aspect-ratio:1;border-radius:50%;overflow:hidden;margin-bottom:12px;border:3px solid var(--or)}
+  .persona .foto .ph{border-radius:50%;border:0;font-size:.75rem}
+  .persona .foto img,.persona .foto svg{width:100%;height:100%;object-fit:cover;display:block}
+  .persona .personatge{font-family:"Playfair Display",serif;font-size:1.12rem;color:var(--vermell)}
+  .persona .nom{font-weight:500}
+  .persona .grup{font-size:.78rem;color:var(--gris);text-transform:uppercase;letter-spacing:.08em}
+
+  /* Equip */
+  .equip{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px}
+  .equip .bloc{background:var(--paper);border-radius:var(--radi);padding:22px;border:1px solid var(--linia)}
+  .equip h3{font-size:1.1rem;color:var(--vermell)}
+  .equip ul{list-style:none;margin:0;padding:0}
+  .equip li{padding:6px 0;border-bottom:1px dotted var(--linia);display:flex;justify-content:space-between;gap:10px;font-size:.93rem}
+  .equip li span:first-child{color:var(--gris)}
+  .equip li span:last-child{font-weight:500;text-align:right}
+
+  /* Teatre / galeria */
+  .galeria{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .galeria .g{aspect-ratio:4/3;border-radius:var(--radi);overflow:hidden;cursor:zoom-in}
+  .galeria .g:first-child{grid-column:span 2;grid-row:span 2;aspect-ratio:auto}
+  .galeria .g img{width:100%;height:100%;object-fit:cover}
+  .galeria .g{position:relative}
+  .lb img{max-width:100%}
+  @media (max-width:700px){.galeria{grid-template-columns:1fr 1fr}.galeria .g:first-child{grid-column:span 2;grid-row:auto;aspect-ratio:16/9}}
+  .teatre-info{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:30px}
+  .teatre-info div{background:#fff;border:1px solid var(--linia);border-radius:var(--radi);padding:18px}
+  .teatre-info b{display:block;color:var(--vermell);margin-bottom:4px}
+  .mapa{margin-top:24px;border-radius:var(--radi);overflow:hidden;height:320px}
+
+  /* Patrocinadors */
+  .patro-nivell{margin-bottom:40px}
+  .patro-nivell h3{text-align:center;font-size:1rem;text-transform:uppercase;letter-spacing:.15em;color:var(--gris);font-family:Inter,sans-serif}
+  .logos{display:flex;flex-wrap:wrap;justify-content:center;gap:18px}
+  .logos a,.logos div.l{display:flex;flex-direction:column;align-items:center;gap:8px;text-decoration:none;color:var(--tinta);font-size:.85rem}
+  .logos .caixa{background:#fff;border:1px solid var(--linia);border-radius:12px;display:flex;align-items:center;justify-content:center;padding:12px}
+  .logos .caixa img{max-height:100%;object-fit:contain}
+  .mida-gran .caixa{width:240px;height:130px}
+  .mida-mitja .caixa{width:180px;height:100px}
+  .mida-petita .caixa{width:140px;height:80px}
+  .logos .ph{font-size:.72rem;padding:6px}
+  .logos .ph::before{font-size:1.1rem;margin-bottom:2px}
+
+  /* Lightbox */
+  .lb{position:fixed;inset:0;background:#000d;display:none;align-items:center;justify-content:center;z-index:100;padding:16px}
+  .lb.open{display:flex}
+  .lb img{max-height:90vh;border-radius:8px}
+  .lb .ph{max-width:600px;height:400px}
+  .lb button{position:absolute;top:14px;right:18px;background:none;border:0;color:#fff;font-size:2rem;cursor:pointer}
+
+  .franja{background:#fff;border-bottom:1px solid var(--linia);padding:22px 0}
+  .franja .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:14px 34px}
+  .franja .tit{width:100%;text-align:center;font-size:.75rem;text-transform:uppercase;letter-spacing:.15em;color:var(--gris)}
+  .franja a{display:flex;flex-direction:column;align-items:center;gap:4px;text-decoration:none;color:var(--gris);font-size:.7rem;text-transform:uppercase;letter-spacing:.08em}
+  .franja img{height:64px;width:auto;object-fit:contain}
+  .peu-logos{width:100%;display:flex;flex-wrap:wrap;justify-content:center;gap:16px;padding-top:24px;margin-top:8px;border-top:1px solid #23345c}
+  .peu-logos img{height:52px;width:auto;background:#fff;border-radius:8px;padding:6px}
+  .qr-box{margin:36px auto 0;max-width:560px;display:flex;align-items:center;gap:24px;background:#fff;border:1px solid var(--linia);border-radius:var(--radi);padding:20px}
+  .qr-box img{width:150px;height:150px;flex:none;border-radius:8px}
+  .qr-box h3{font-size:1.25rem;color:var(--vermell);margin-bottom:.3em}
+  .qr-box p{margin:0 0 .4em;color:var(--gris);font-size:.93rem}
+  .qr-box a{word-break:break-all;font-size:.85rem}
+  @media (max-width:520px){.qr-box{flex-direction:column;text-align:center}}
+  .peu-qr{display:flex;align-items:center;gap:12px}
+  .peu-qr img{width:76px;height:76px;background:#fff;border-radius:6px;padding:4px}
+  .intriga{max-width:760px;margin:36px auto 0;text-align:center;border:1px dashed var(--or);border-radius:var(--radi);padding:28px 20px}
+  .intriga .num{color:var(--or);font-family:"Playfair Display",serif;letter-spacing:.2em;font-size:1.1rem;margin-bottom:6px}
+  .intriga h3{color:#fff;font-size:1.5rem}
+  .intriga p{color:#b9bccb;margin:0 auto 18px;max-width:34em}
+  footer{background:var(--nit);color:#b9bccb;padding:40px 0;font-size:.9rem}
+  footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px}
+  footer a{color:var(--or)}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a href="#inici" class="logo">★ Els Pastorets</a>
+    <button class="burger" aria-label="Menú" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+    <ul id="menu">
+      <li><a href="#obra">L'obra</a></li>
+      <li><a href="#sessions">La funció</a></li>
+      <li><a href="#programa">Programa</a></li>
+      <li><a href="#repartiment">Repartiment</a></li>
+      <li><a href="#equip">Equip</a></li>
+      <li><a href="#teatre">El teatre</a></li>
+      <li><a href="#patrocinadors">Patrocinadors</a></li>
+    </ul>
+  </div>
+</header>
+
+<!-- PORTADA -->
+<section class="hero" id="inici" style="padding:0">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">Temporada de Nadal 2026 · Horta, Barcelona</div>
+      <h1>Els Pastorets</h1>
+      <p class="sub">La lluita eterna entre el bé i el mal, els pastors més entremaliats i l'arribada del Nen Jesús. Una versió plena d'humor de la tradició nadalenca, al teatre del Col·legi Salesià Sant Joan Bosco d'Horta. Una funció solidària en benefici de la Fundació Magone. Entrada gratuïta!</p>
+      <div class="meta">
+        <span class="chip">📅 Divendres 11 de desembre · 19:00 h</span>
+        <span class="chip">🎟 Entrada gratuïta</span>
+        <span class="chip">🎁 Sortejos i sorpreses</span>
+        <span class="chip">📍 Teatre del Col·legi Salesià Sant Joan Bosco · Horta</span>
+        <span class="chip">🎭 5 actes</span>
+        <span class="chip">💛 En benefici de la Fundació Magone</span>
+      </div>
+      <a href="#sessions" class="btn">Entrada gratuïta · Informació</a>
+      <a href="#programa" class="btn ghost">Veure el programa</a>
+      <div class="countdown" id="countdown" aria-label="Compte enrere fins a l'estrena"></div>
+    </div>
+    <div class="poster" data-img="img/cartell.jpg" data-alt="Cartell d'Els Pastorets 2026: divendres 11 de desembre a les 19:00 h, entrada gratuïta"></div>
+  </div>
+</section>
+
+<!-- FRANJA DE LOGOS -->
+<div class="franja" aria-label="Entitats">
+  <div class="wrap" id="franja-logos"><div class="tit">Amb la col·laboració de</div></div>
+</div>
+
+<!-- L'OBRA -->
+<section id="obra" class="alt">
+  <div class="wrap grid2">
+    <div>
+      <div class="ornament">✦ ✦ ✦</div>
+      <h2>L'obra</h2>
+      <p id="sinopsi">
+        És la nit de Nadal i, a la masia del Mas Torrat, la Lluqueta i el Rovelló s'adormen vora el foc, encara espantats per la rondalla de l'avi Roc. En somnis, es perden en un bosc tenebrós i topen amb Satanàs i Llucifer, que planegen impedir el naixement del Messies amb l'ajuda dels set pecats capitals. Sort de Sant Miquel! Però l'infern no es dona per vençut tan fàcilment… Com acabarà tot plegat? Vine a descobrir-ho: és una obra en 5 actes plena de sorpreses!
+      </p>
+      <p>Una <strong>adaptació exprés de l'obra de Josep Maria Folch i Torres</strong>, amb picades d'ullet al barri (tothom sap que per arribar als Salesians d'Horta s'ha de baixar a Mundet!), cançons, balls i molta participació del públic.</p>
+      <dl class="fitxa">
+        <dt>Text</dt><dd id="autor">Adaptació exprés de l'obra de Josep Maria Folch i Torres, per Víctor Naranjo i Fedor Vagramenko</dd>
+        <dt>Direcció</dt><dd>Alex Talavera</dd>
+        <dt>Organitza</dt><dd>Associació d'antics alumnes i alumnes de Don Bosco, Horta</dd>
+        <dt>Idioma</dt><dd>Català</dd>
+        <dt>Estructura</dt><dd>5 actes · 12 quadres</dd><dt>En benefici de</dt><dd>Fundació Magone</dd>
+      </dl>
+    </div>
+    <div style="aspect-ratio:4/3" data-img="img/escena-anterior.jpg" data-alt="Satanàs en una representació dels Pastorets al teatre de l'escola"></div>
+  </div>
+</section>
+
+<!-- SESSIONS -->
+<section id="sessions">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="ornament">✦ ✦ ✦</div>
+      <h2>La funció</h2>
+      <p>Una sola funció al teatre del Col·legi Salesià Sant Joan Bosco d'Horta. No t'hi quedis sense!</p>
+    </div>
+    <div class="sessions" id="llista-sessions"></div>
+    <p class="preus"><strong>Entrada gratuïta</strong> fins a completar l'aforament.<br>🎁 <strong>Hi haurà sortejos i sorpreses</strong> per al públic!<br>La funció és en benefici de la Fundació Magone · Salesians Social.</p>
+    <div class="qr-box">
+      <img src="img/qr-web.png" alt="Codi QR de la web dels Pastorets 2026">
+      <div>
+        <h3>Comparteix-ho!</h3>
+        <p>Escaneja el codi QR amb el mòbil per obrir aquesta web, o envia l'enllaç a família i amics.</p>
+        <a href="https://sites.google.com/view/pastorets-horta-2026" target="_blank" rel="noopener">sites.google.com/view/pastorets-horta-2026</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAMA -->
+<section id="programa" class="fosc">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="ornament">✦ ✦ ✦</div>
+      <h2>Programa de mà</h2>
+      <p>Una adaptació exprés de l'obra de Josep Maria Folch i Torres. Aquí teniu un tast dels dos primers quadres… la resta, l'haureu de descobrir a la sala!</p>
+    </div>
+    <ol class="escenes" id="llista-escenes"></ol>
+    <div class="intriga">
+      <div class="num">Actes II · III · IV · V</div>
+      <h3>I després… què passarà?</h3>
+      <p>Els Pastorets és una obra en <strong>5 actes</strong>. Aquí només us n'expliquem els dos primers quadres: per saber com acaba l'aventura de la Lluqueta i el Rovelló, haureu de venir a veure-ho!</p>
+      <a href="#sessions" class="btn">Divendres 11 de desembre · 19:00 h</a>
+    </div>
+  </div>
+</section>
+
+<!-- REPARTIMENT -->
+<section id="repartiment" class="alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="ornament">✦ ✦ ✦</div>
+      <h2>Repartiment</h2>
+      <p>Els actors i actrius que donen vida als personatges.</p>
+    </div>
+    <div class="filtres" id="filtres"></div>
+    <div class="persones" id="llista-actors"></div>
+  </div>
+</section>
+
+<!-- EQUIP -->
+<section id="equip">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="ornament">✦ ✦ ✦</div>
+      <h2>Equip i participants</h2>
+      <p>Darrere el teló també hi ha molta gent: direcció, guió, escenografia, llums i so, vestuari i les entitats que ho fan possible.</p>
+    </div>
+    <div class="equip" id="llista-equip"></div>
+  </div>
+</section>
+
+<!-- TEATRE -->
+<section id="teatre" class="alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="ornament">✦ ✦ ✦</div>
+      <h2>El teatre</h2>
+      <p>El teatre del Col·legi Salesià Sant Joan Bosco, al barri d'Horta, la casa dels nostres Pastorets.</p>
+    </div>
+    <div class="galeria" id="galeria"></div>
+    <div class="teatre-info">
+      <div><b>Adreça</b>Col·legi Salesià Sant Joan Bosco<br>Pg. de la Vall d'Hebron, 258<br>Horta, Barcelona</div>
+      <div><b>Com arribar-hi</b>Metro L3 Mundet (sortida Salesians)<br>Bus: H4, V21, V23, 27, 60, 76 i M19</div>
+      <div><b>Aforament</b>Més de 500 localitats<br>Accés adaptat per a cadires de rodes</div>
+      <div><b>Contacte</b>Associació d'Antics Alumnes Don Bosco Horta<br><a href="mailto:dbhorta@gmail.com">dbhorta@gmail.com</a></div>
+    </div>
+    <div class="mapa">
+      <iframe title="Mapa del teatre" width="100%" height="100%" style="border:0" loading="lazy"
+        src="https://www.google.com/maps?q=Passeig+de+la+Vall+d%27Hebron+258+Barcelona&output=embed"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- PATROCINADORS -->
+<section id="patrocinadors">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="ornament">✦ ✦ ✦</div>
+      <h2>Patrocinadors i col·laboradors</h2>
+      <p>Les entitats que fan possibles Els Pastorets 2026.</p>
+    </div>
+    <div id="llista-patro"></div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="peu-qr"><img src="img/qr-web.png" alt="Codi QR de la web"><span>Escaneja'm<br>i comparteix</span></div>
+    <div><strong style="color:var(--or)">Els Pastorets</strong> · Col·legi Salesià Sant Joan Bosco, Horta<br>Nadal 2026 · En benefici de la Fundació Magone</div>
+    <div><a href="#inici">Torna a dalt ↑</a></div>
+    <div class="peu-logos" id="peu-logos"></div>
+  </div>
+</footer>
+
+<div class="lb" id="lb" onclick="if(event.target===this)tancaLb()"><button onclick="tancaLb()" aria-label="Tanca">×</button><div id="lb-contingut"></div></div>
+
+<script>
+/* =========================================================
+   DADES DE L'OBRA — edita aquí per actualitzar la web.
+   Si una "img" no existeix o és buida, es mostra un requadre
+   "Aquí va una foto de ...".
+   ========================================================= */
+
+const ESTRENA = "2026-12-11T19:00:00"; // data de l'estrena (per al compte enrere)
+
+const SESSIONS = [
+  { dia:"Divendres 11 de desembre", hora:"19:00 h", nota:"Funció única", estat:"gratis", url:"#teatre" },
+];
+
+const ESCENES = [
+  { acte:"Acte primer" },
+  { n:"I",   titol:"La nit de Nadal", text:"A la masia, la Lluqueta i el Rovelló s'adormen vora el foc després d'escoltar la rondalla de l'avi Roc… i somien." },
+  { n:"II",  titol:"Perduts al bosc", text:"Llops, lleons, cocodrils… i Satanàs! Els vailets descobreixen els plans de l'infern i coneixen els set pecats capitals. Sant Miquel els salva." },
+];
+
+// grup: s'utilitza per als filtres del repartiment. img: ruta de la foto (buit = requadre provisional)
+const ACTORS = [
+  { personatge:"Lluqueta",   nom:"Núria Sújar",      grup:"Pastors", img:"", cara:{pell:"#f6d3b8",cabell:"#7a4a2a",pentinat:"trenes",gorro:"barretina",roba:"#c9a16b",boca:"riu"} },
+  { personatge:"Rovelló",    nom:"Sergi Rubio",      grup:"Pastors", img:"", cara:{pell:"#f6d3b8",cabell:"#5b3a22",pentinat:"curt",gorro:"barretina",ulleres:true,barba:"curta",roba:"#a9845a",boca:"riu"} },
+  { personatge:"Isabeló",    nom:"Celeste Atías",    grup:"Pastors", img:"", cara:{pell:"#f8dcc4",cabell:"#e0a43a",pentinat:"llarg",flor:true,roba:"#f2a7b8",boca:"somriu"} },
+  { personatge:"Getsé",      nom:"Maripaz Murillo",  grup:"Pastors", img:"", cara:{pell:"#efc9a8",cabell:"#cfcfcf",pentinat:"calb",barba:"llarga",barbaColor:"#d9d9d9",roba:"#8a7a66",boca:"trist",celles:"trist"} },
+  { personatge:"Jepó",       nom:"Jordi Sújar",      grup:"Pastors", img:"", cara:{pell:"#efc9a8",cabell:"#6b6b6b",pentinat:"calb",barba:"llarga",barbaColor:"#9a9a9a",gorro:"barretina",roba:"#8c6b4a",boca:"riu"} },
+  { personatge:"Jeremies",   nom:"Víctor Naranjo",   grup:"Pastors", img:"", cara:{pell:"#f1cdb0",cabell:"#3b2a1d",pentinat:"curt",barba:"curta",roba:"#7d9a5b",boca:"o"} },
+  { personatge:"Marta",      nom:"Laura Rodríguez",  grup:"Pastors", img:"", cara:{pell:"#f6d3b8",cabell:"#a0522d",pentinat:"monyo",mocador:"#e9c46a",roba:"#d97b5b",boca:"somriu"} },
+  { personatge:"Satanàs",    nom:"Alex Talavera",    grup:"Infern",  img:"", cara:{pell:"#e45b4b",cabell:"#5a2a12",pentinat:"curt",caputxa:"#c4161c",banyes:"#e8262e",celles:"enfadat",roba:"#c4161c",boca:"dents"} },
+  { personatge:"Llucifer",   nom:"Èlida Rodríguez",  grup:"Infern",  img:"", cara:{pell:"#9bd18f",cabell:"#1d1d26",pentinat:"llarg",caputxa:"#1d1d26",celles:"enfadat",roba:"#1d1d26",boca:"dolent",dona:true} },
+  { personatge:"Supèrbia",   nom:"Laura Sánchez",    grup:"Pecats capitals", img:"", cara:{pell:"#f4c9b0",cabell:"#2d1b3d",pentinat:"llarg",corona:true,banyetes:true,roba:"#c4161c",boca:"serios",ulls:"altius",dona:true} },
+  { personatge:"Ira",        nom:"Olga Sánchez",     grup:"Pecats capitals", img:"", cara:{pell:"#f08a7a",cabell:"#8b1a1a",pentinat:"llarg",banyetes:true,celles:"enfadat",roba:"#c4161c",boca:"crit",dona:true} },
+  { personatge:"Golosia",    nom:"Catalina Rubio",   grup:"Pecats capitals", img:"", cara:{pell:"#f6d3b8",cabell:"#6b3e1e",pentinat:"llarg",banyetes:true,magdalena:true,roba:"#c4161c",boca:"menja",dona:true} },
+  { personatge:"Enveja",     nom:"Per confirmar",    grup:"Pecats capitals", img:"", cara:{pell:"#c7e3a6",cabell:"#2f5d2a",pentinat:"llarg",banyetes:true,ulls:"desviats",roba:"#c4161c",boca:"serios"} },
+  { personatge:"Avarícia",   nom:"David Bejarano",   grup:"Pecats capitals", img:"", cara:{pell:"#f1cdb0",cabell:"#5b4a1e",pentinat:"curt",banyetes:true,moneda:true,roba:"#c4161c",boca:"dolent"} },
+  { personatge:"Peresa",     nom:"Biel Sújar",       grup:"Pecats capitals", img:"", cara:{pell:"#f6d3b8",cabell:"#8a6a4a",pentinat:"curt",banyetes:true,gorro:"dormir",ulls:"son",roba:"#c4161c",boca:"badall"} },
+  { personatge:"Luxúria",    nom:"Eva Peiron",       grup:"Pecats capitals", img:"", cara:{pell:"#f8d0c0",cabell:"#b0174a",pentinat:"llarg",banyetes:true,llavis:true,roba:"#c4161c",boca:"petó",dona:true} },
+  { personatge:"Sant Miquel",nom:"Càrol Lapena",     grup:"Cel",     img:"", cara:{pell:"#fae0c8",cabell:"#f2c14e",pentinat:"rinxols",aureola:true,ales:true,casc:true,roba:"#dfe7f5",boca:"somriu"} },
+  { personatge:"Maria",      nom:"Ana",              grup:"Sagrada Família", img:"", cara:{pell:"#fae0c8",cabell:"#5b3a22",pentinat:"llarg",vel:"#4a78c2",aureola:true,roba:"#f5f2ea",boca:"somriu"} },
+  { personatge:"Josep",      nom:"Per confirmar",    grup:"Sagrada Família", img:"", cara:{pell:"#efc9a8",cabell:"#5b3a22",pentinat:"curt",barba:"llarga",barbaColor:"#5b3a22",aureola:true,roba:"#9b6a3c",boca:"somriu"} },
+  { personatge:"Jesús",      nom:"Per confirmar",    grup:"Sagrada Família", img:"", cara:{pell:"#fde4cf",cabell:"#e6b36a",pentinat:"nado",aureola:true,bolquers:true,roba:"#ffffff",boca:"somriu"} },
+  { personatge:"Veu en off", nom:"Jordi Sújar",      grup:"Altres",  img:"", cara:{pell:"#f1cdb0",cabell:"#555",pentinat:"curt",auriculars:true,micro:true,roba:"#2b3a67",boca:"o"} },
+  { personatge:"Llop, lleó i cocodril", nom:"Per confirmar", grup:"Altres", img:"", cara:{animal:true} },
+  { personatge:"Dimonis, àngels i pastors", nom:"Extres diversos", grup:"Altres", img:"", cara:{grup:true} },
+];
+
+const EQUIP = [
+  { area:"Direcció i guió", membres:[["Direcció","Alex Talavera"],["Guió","Víctor Naranjo"],["Guió","Fedor Vagramenko"]] },
+  { area:"Organització", membres:[["Organització","Ana Naranjo"],["Organització","Víctor Naranjo"]] },
+  { area:"Escenografia", membres:[["Decorats","Matias Colota"],["Decorats","Martín Rodríguez"],["Carpinteria","Martín Rodríguez"],["Impressió 3D","Martín Rodríguez"],["Atrezzo","Ana Naranjo"]] },
+  { area:"Llums i so", membres:[["Llums i so 1","Jordi Boada"],["Llums i so 2","Albert Boada"]] },
+  { area:"Vestuari i maquillatge", membres:[["Vestuari","Dolors Rubio"],["Maquillatge","Maribel"]] },
+  { area:"Entitats", membres:[["Organització, financiació i equip tècnic","Associació d'antics alumnes i alumnes de Don Bosco, Horta"],["Patrocini","Fundación Juan Bosco Siglo XXI"],["Cessió d'espais","Col·legi Salesià Sant Joan Bosco, Horta"],["En benefici de","Fundació Magone"]] },
+];
+
+const TEATRE_FOTOS = [
+  { img:"img/teatre-platea.jpg", alt:"La platea i l'escenari del teatre del Col·legi Salesià Sant Joan Bosco" },
+  { img:"img/escola-aeri-1.jpg", alt:"Vista aèria del Col·legi Salesià Sant Joan Bosco d'Horta" },
+  { img:"img/escola-aeri-2.jpg", alt:"El col·legi i el pati des de l'aire" },
+  { img:"img/escenari-detall.jpg", alt:"L'escenari del teatre, on es representen Els Pastorets" },
+  { img:"img/escena-anterior.jpg", alt:"Una escena dels Pastorets d'un any anterior al teatre de l'escola" },
+];
+
+// nivell: defineix el bloc i la mida del logo
+const PATROCINADORS = [
+  { nivell:"Organitza i finança", nom:"Associació d'antics alumnes i alumnes de Don Bosco, Horta", logo:"img/logo-antics-alumnes.png", url:"#" },
+  { nivell:"Patrocina",           nom:"Fundación Juan Bosco Siglo XXI", logo:"img/logo-jbsxxi.png", url:"#" },
+  { nivell:"En benefici de",      nom:"Fundació Magone · Salesians Social", logo:"img/logo-magone.png", url:"#" },
+  { nivell:"Col·labora",         nom:"Col·legi Salesià Sant Joan Bosco, Horta (cessió d'espais)", logo:"img/logo-salesians-horta.png", url:"#" },
+];
+
+/* =========================================================
+   LÒGICA
+   ========================================================= */
+const $ = s => document.querySelector(s);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+// Retorna una <img>; si falla o no hi ha ruta, un requadre "Aquí va una foto de ..."
+function imatge(src, alt, tipus="foto") {
+  const text = tipus==="logo" ? `Aquí va el logo de ${esc(alt)}` : `Aquí va una foto de ${esc(alt)}`;
+  const ph = `<div class="ph ${tipus==='logo'?'logo-ph':''}"><span>${text}</span></div>`;
+  if (!src) return ph;
+  return `<img src="${esc(src)}" alt="${esc(alt)}" onerror="this.outerHTML=this.dataset.ph" data-ph='${ph.replace(/'/g,"&#39;")}'>`;
+}
+document.querySelectorAll("[data-img]").forEach(el => el.innerHTML = imatge(el.dataset.img, el.dataset.alt));
+
+
+/* Cares dibuixades (il·lustració naïf amb galtes vermelles). Es fan servir quan l'actor no té foto. */
+function cara(c){
+  const W=(x)=>x; let b="";
+  const fons = c.fons || "#fff4e2";
+  b+=`<rect width="200" height="200" fill="${fons}"/>`;
+  if (c.animal) return `<svg viewBox="0 0 200 200" role="img" aria-label="dibuix del llop, el lleó i el cocodril">${b}
+    <g transform="translate(18 40)"><ellipse cx="32" cy="70" rx="30" ry="28" fill="#9aa0a6"/><path d="M8 50 L14 22 L28 44Z M56 50 L50 22 L36 44Z" fill="#7b8187"/><circle cx="22" cy="66" r="4"/><circle cx="42" cy="66" r="4"/><ellipse cx="32" cy="82" rx="9" ry="6" fill="#444"/><circle cx="14" cy="80" r="6" fill="#f29a9a" opacity=".6"/><circle cx="50" cy="80" r="6" fill="#f29a9a" opacity=".6"/></g>
+    <g transform="translate(70 18)"><circle cx="30" cy="62" r="40" fill="#d9822b"/><circle cx="30" cy="62" r="27" fill="#f2c27a"/><circle cx="20" cy="58" r="4"/><circle cx="40" cy="58" r="4"/><path d="M24 70 Q30 76 36 70" stroke="#5a3a1a" stroke-width="3" fill="none"/><circle cx="12" cy="70" r="6" fill="#f29a9a" opacity=".6"/><circle cx="48" cy="70" r="6" fill="#f29a9a" opacity=".6"/></g>
+    <g transform="translate(110 110)"><path d="M0 30 Q10 0 40 6 L80 18 Q84 30 70 34 L20 40Z" fill="#5fa35a"/><circle cx="26" cy="12" r="6" fill="#fff"/><circle cx="27" cy="12" r="3"/><path d="M40 30 L44 24 L48 30 L52 24 L56 30 L60 24 L64 30" stroke="#fff" stroke-width="2" fill="none"/></g></svg>`;
+  if (c.grup) {
+    const mini=(x,col,extra)=>`<g transform="translate(${x} 70)"><ellipse cx="0" cy="40" rx="24" ry="26" fill="#f6d3b8"/><circle cx="-8" cy="38" r="3"/><circle cx="8" cy="38" r="3"/><circle cx="-14" cy="48" r="6" fill="#f29a9a" opacity=".7"/><circle cx="14" cy="48" r="6" fill="#f29a9a" opacity=".7"/><path d="M-6 52 Q0 57 6 52" stroke="#a33" stroke-width="2" fill="none"/><path d="M-30 110 Q0 66 30 110Z" fill="${col}"/>${extra}</g>`;
+    return `<svg viewBox="0 0 200 200" role="img" aria-label="dibuix de dimonis, àngels i pastors">${b}
+      ${mini(45,"#c4161c",`<path d="M-16 18 Q-22 4 -12 0 Q-12 12 -6 16Z M16 18 Q22 4 12 0 Q12 12 6 16Z" fill="#d61f26"/>`)}
+      ${mini(155,"#c9a16b",`<path d="M-24 22 Q0 -6 24 22 Q12 14 0 16 Q-12 14 -24 22Z" fill="#fff" stroke="#ddd"/>`)}
+      ${mini(100,"#dfe7f5",`<ellipse cx="0" cy="4" rx="18" ry="5" fill="none" stroke="#e5b64b" stroke-width="4"/>`)}</svg>`;
+  }
+  const pell=c.pell, cab=c.cabell;
+  // ales i elements de darrere
+  if (c.ales) {
+    const ploma=(x,y,ang,len,w)=>`<ellipse cx="${x}" cy="${y-len/2}" rx="${w}" ry="${len/2}" transform="rotate(${ang} ${x} ${y})"/>`;
+    const ala=(sx,dir)=>[[-12,110,14],[-28,104,13],[-44,94,12],[-60,80,11],[-76,62,10]].map(([a,l,w])=>ploma(sx,150,a*dir,l,w)).join("");
+    b+=`<g fill="#ffffff" stroke="#b9c6e0" stroke-width="2">${ala(72,1)}${ala(128,-1)}</g>`;
+  }
+  if (c.caputxa) b+=`<path d="M30 200 Q22 70 100 34 Q178 70 170 200Z" fill="${c.caputxa}"/>`;
+  if (c.vel) b+=`<path d="M38 200 Q30 70 100 40 Q170 70 162 200Z" fill="${c.vel}"/>`;
+  if (["llarg","trenes"].includes(c.pentinat) && !c.vel) b+=`<path d="M48 150 Q40 60 100 46 Q160 60 152 150 Q150 170 132 168 L68 168 Q50 170 48 150Z" fill="${cab}"/>`;
+  // cos
+  b+=`<path d="M36 200 Q40 156 100 152 Q160 156 164 200Z" fill="${c.roba}"/>`;
+  if (c.bolquers) b+=`<path d="M36 200 Q40 156 100 152 Q160 156 164 200Z" fill="#fff" stroke="#e6e0d0" stroke-width="3"/>`;
+  b+=`<rect x="88" y="138" width="24" height="20" rx="8" fill="${pell}"/>`;
+  // orelles i cap
+  b+=`<circle cx="50" cy="104" r="10" fill="${pell}"/><circle cx="150" cy="104" r="10" fill="${pell}"/>`;
+  const ry = c.pentinat==="nado" ? 46 : 52;
+  b+=`<ellipse cx="100" cy="100" rx="50" ry="${ry}" fill="${pell}"/>`;
+  // barba
+  if (c.barba==="llarga") b+=`<path d="M56 108 Q60 176 100 180 Q140 176 144 108 Q130 140 100 140 Q70 140 56 108Z" fill="${c.barbaColor||cab}"/>`;
+  if (c.barba==="curta") b+=`<path d="M58 112 Q64 150 100 152 Q136 150 142 112 Q128 134 100 134 Q72 134 58 112Z" fill="${cab}" opacity=".85"/>`;
+  // cabells de dalt
+  const P={
+    curt:`<path d="M52 96 Q50 46 100 44 Q150 46 148 96 Q140 70 100 66 Q60 70 52 96Z" fill="${cab}"/>`,
+    llarg:`<path d="M50 104 Q48 46 100 44 Q152 46 150 104 Q140 66 100 64 Q60 66 50 104Z" fill="${cab}"/>`,
+    trenes:`<path d="M50 100 Q50 46 100 44 Q150 46 150 100 Q140 66 100 64 Q60 66 50 100Z" fill="${cab}"/><path d="M48 110 Q36 140 46 168" stroke="${cab}" stroke-width="12" stroke-linecap="round" fill="none"/><path d="M152 110 Q164 140 154 168" stroke="${cab}" stroke-width="12" stroke-linecap="round" fill="none"/><circle cx="46" cy="170" r="6" fill="#d94f4f"/><circle cx="154" cy="170" r="6" fill="#d94f4f"/>`,
+    calb:`<path d="M50 104 Q48 80 60 70 Q56 90 62 104Z M150 104 Q152 80 140 70 Q144 90 138 104Z" fill="${cab}"/>`,
+    rinxols:[60,76,92,108,124,140].map((x,i)=>`<circle cx="${x}" cy="${58+(i%2)*6}" r="14" fill="${cab}"/>`).join("")+`<circle cx="52" cy="80" r="11" fill="${cab}"/><circle cx="148" cy="80" r="11" fill="${cab}"/>`,
+    punxes:`<path d="M52 92 L56 50 L70 66 L80 40 L92 62 L100 34 L110 62 L122 40 L130 66 L144 50 L148 92 Q100 64 52 92Z" fill="${cab}"/>`,
+    monyo:`<circle cx="100" cy="40" r="16" fill="${cab}"/><path d="M52 98 Q50 48 100 46 Q150 48 148 98 Q140 68 100 66 Q60 68 52 98Z" fill="${cab}"/>`,
+    nado:`<path d="M84 58 Q100 44 112 58 Q100 52 92 62Z" fill="${cab}"/>`,
+  };
+  if (!c.vel && !c.caputxa) b+=P[c.pentinat]||"";
+  if (c.vel) b+=`<path d="M52 100 Q50 52 100 50 Q150 52 148 100 Q140 72 100 70 Q60 72 52 100Z" fill="${cab}"/>`;
+  if (c.caputxa) b+=`<path d="M46 110 Q44 44 100 40 Q156 44 154 110 Q148 68 100 62 Q52 68 46 110Z" fill="${c.caputxa}"/>`;
+  // ulls
+  const U = {
+    son:`<path d="M72 100 Q80 106 88 100" stroke="#2b2b2b" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M112 100 Q120 106 128 100" stroke="#2b2b2b" stroke-width="3" fill="none" stroke-linecap="round"/>`,
+    altius:`<path d="M72 102 Q80 96 88 102" stroke="#2b2b2b" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M112 102 Q120 96 128 102" stroke="#2b2b2b" stroke-width="3" fill="none" stroke-linecap="round"/>`,
+    desviats:`<circle cx="80" cy="100" r="7" fill="#fff"/><circle cx="120" cy="100" r="7" fill="#fff"/><circle cx="84" cy="100" r="3.5" fill="#2b2b2b"/><circle cx="124" cy="100" r="3.5" fill="#2b2b2b"/>`,
+  };
+  b+= U[c.ulls] || `<circle cx="80" cy="100" r="4.5" fill="#2b2b2b"/><circle cx="120" cy="100" r="4.5" fill="#2b2b2b"/>`;
+  if (c.dona && !c.ulls) b+=`<path d="M74 96 L70 91 M79 95 L78 89 M84 96 L87 91 M116 96 L113 91 M121 95 L122 89 M126 96 L130 91" stroke="#2b2b2b" stroke-width="2" stroke-linecap="round"/>`;
+  if (c.ulleres) b+=`<circle cx="80" cy="100" r="13" fill="none" stroke="#8a4b2a" stroke-width="3"/><circle cx="120" cy="100" r="13" fill="none" stroke="#8a4b2a" stroke-width="3"/><path d="M93 100 L107 100" stroke="#8a4b2a" stroke-width="3"/>`;
+  if (c.celles==="enfadat") b+=`<path d="M68 86 L90 94 M132 86 L110 94" stroke="#2b2b2b" stroke-width="4" stroke-linecap="round"/>`;
+  else if (c.celles==="trist") b+=`<path d="M70 92 L88 86 M130 92 L112 86" stroke="#555" stroke-width="3" stroke-linecap="round"/>`;
+  else b+=`<path d="M72 88 Q80 84 88 88 M112 88 Q120 84 128 88" stroke="${cab}" stroke-width="3" fill="none" stroke-linecap="round" opacity=".8"/>`;
+  // galtes i nas
+  b+=`<circle cx="70" cy="118" r="11" fill="#ef8a8a" opacity=".65"/><circle cx="130" cy="118" r="11" fill="#ef8a8a" opacity=".65"/>`;
+  b+=`<path d="M98 106 Q102 114 96 116" stroke="#c98a6a" stroke-width="2.5" fill="none" stroke-linecap="round"/>`;
+  // boca
+  const B={
+    somriu:`<path d="M88 128 Q100 138 112 128" stroke="#b03a3a" stroke-width="3" fill="none" stroke-linecap="round"/>`,
+    riu:`<path d="M84 124 Q100 146 116 124Z" fill="#b03a3a"/><path d="M88 126 L112 126" stroke="#fff" stroke-width="3"/>`,
+    trist:`<path d="M88 134 Q100 126 112 134" stroke="#8a3a3a" stroke-width="3" fill="none" stroke-linecap="round"/>`,
+    serios:`<path d="M90 130 L110 130" stroke="#8a3a3a" stroke-width="3" stroke-linecap="round"/>`,
+    o:`<ellipse cx="100" cy="130" rx="6" ry="7" fill="#8a2a2a"/>`,
+    dolent:`<path d="M84 126 Q100 136 118 122" stroke="#4a0d0d" stroke-width="3.5" fill="none" stroke-linecap="round"/>`,
+    dents:`<path d="M82 124 Q100 144 118 124Z" fill="#4a0d0d"/><path d="M84 125 L116 125 L112 131 L88 131Z" fill="#fff"/>`,
+    crit:`<ellipse cx="100" cy="132" rx="12" ry="9" fill="#5a0d0d"/>`,
+    menja:`<ellipse cx="100" cy="130" rx="10" ry="6" fill="#8a2a2a"/><circle cx="94" cy="128" r="2" fill="#7a4a1a"/>`,
+    badall:`<ellipse cx="100" cy="132" rx="8" ry="11" fill="#6a2a2a"/>`,
+    "petó":`<path d="M94 128 Q100 122 106 128 Q100 136 94 128Z" fill="#d6336c"/>`,
+  };
+  b+= (B[c.boca]||B.somriu).replace(/#b03a3a|#8a3a3a|#4a0d0d/g, c.dona ? "#d6336c" : "$&");
+  // complements
+  if (c.gorro==="llana") b+=`<path d="M50 84 Q50 34 100 30 Q150 34 150 84 Q100 70 50 84Z" fill="#fbf7ee" stroke="#e2dccb" stroke-width="2"/>`+[58,72,86,100,114,128,142].map(x=>`<circle cx="${x}" cy="${80-Math.abs(100-x)*0.1}" r="7" fill="#fbf7ee" stroke="#e2dccb" stroke-width="1.5"/>`).join("");
+  if (c.gorro==="barretina") b+=`<path d="M54 74 Q60 40 100 40 Q130 40 150 70 Q170 50 168 30 Q150 48 120 40 Q90 30 60 52 Q50 62 54 74Z" fill="#c4161c"/><path d="M52 76 Q100 62 150 76" stroke="#8e0f14" stroke-width="6" fill="none"/>`;
+  if (c.gorro==="dormir") b+=`<path d="M52 82 Q60 32 110 34 Q150 40 172 90 Q140 60 148 80 Q100 66 52 82Z" fill="#7f9bc4"/><circle cx="172" cy="92" r="9" fill="#fff"/><text x="150" y="40" font-size="18" fill="#7f9bc4" font-family="Georgia">z</text><text x="164" y="26" font-size="14" fill="#7f9bc4" font-family="Georgia">z</text>`;
+  if (c.mocador) b+=`<path d="M50 90 Q52 50 100 48 Q148 50 150 90 Q100 74 50 90Z" fill="${c.mocador}"/><path d="M56 92 Q100 78 144 92" stroke="#d1a23e" stroke-width="3" stroke-dasharray="3 5" fill="none"/>`;
+  if (c.banyes) b+=`<path d="M62 62 Q44 30 56 14 Q60 40 76 54Z M138 62 Q156 30 144 14 Q140 40 124 54Z" fill="${c.banyes}"/>`;
+  if (c.corona) b+=`<path d="M76 52 L79 30 L89 44 L100 26 L111 44 L121 30 L124 52Z" fill="#e5b64b" stroke="#b8902e" stroke-width="2"/><circle cx="100" cy="40" r="4" fill="#c4161c"/>`;
+  if (c.banyetes) b+=`<path d="M62 64 Q46 44 54 24 Q60 46 74 56Z M138 64 Q154 44 146 24 Q140 46 126 56Z" fill="#e8262e" stroke="#9e1b23" stroke-width="1.5"/>`;
+  if (c.aureola) b+=`<ellipse cx="100" cy="${c.casc?22:34}" rx="34" ry="9" fill="none" stroke="#e5b64b" stroke-width="5"/>`;
+  if (c.casc) b+=`<path d="M54 80 Q54 40 100 38 Q146 40 146 80 Q100 66 54 80Z" fill="#c9cfd8" stroke="#9aa3b0" stroke-width="2"/><path d="M100 38 Q110 20 130 22 Q116 28 104 40Z" fill="#c4161c"/>`;
+  if (c.flor) b+=`<g transform="translate(140 64)">${[0,72,144,216,288].map(a=>`<circle cx="${Math.cos(a*Math.PI/180)*7}" cy="${Math.sin(a*Math.PI/180)*7}" r="6" fill="#fff"/>`).join("")}<circle r="5" fill="#f2c14e"/></g>`;
+  if (c.magdalena) b+=`<g transform="translate(140 150)"><path d="M-16 0 L16 0 L12 22 L-12 22Z" fill="#d9a066"/><ellipse cx="0" cy="0" rx="18" ry="11" fill="#b5651d"/><circle cx="0" cy="-8" r="5" fill="#c4161c"/></g>`;
+  if (c.moneda) b+=`<g transform="translate(146 156)"><circle r="16" fill="#e5b64b" stroke="#b8902e" stroke-width="3"/><circle r="9" fill="none" stroke="#b8902e" stroke-width="2"/></g>`;
+  if (c.llavis) b+=`<path d="M150 70 q-6 -8 -12 0 q0 8 12 16 q12 -8 12 -16 q-6 -8 -12 0Z" fill="#d6336c"/>`;
+  if (c.auriculars) b+=`<path d="M48 104 Q46 44 100 42 Q154 44 152 104" stroke="#333" stroke-width="7" fill="none"/><rect x="38" y="94" width="16" height="26" rx="6" fill="#333"/><rect x="146" y="94" width="16" height="26" rx="6" fill="#333"/>`;
+  if (c.micro) b+=`<path d="M146 112 Q140 140 112 134" stroke="#333" stroke-width="3" fill="none"/><circle cx="110" cy="134" r="6" fill="#333"/>`;
+  return `<svg viewBox="0 0 200 200" role="img" aria-label="dibuix de la cara del personatge">${b}</svg>`;
+}
+
+// Compte enrere
+function compteEnrere(){
+  const d = new Date(ESTRENA) - new Date();
+  const c = $("#countdown");
+  if (d <= 0) { c.innerHTML = `<div><b>🎭</b><span>En cartell!</span></div>`; return; }
+  const u = [["dies",864e5],["hores",36e5],["min",6e4],["seg",1e3]];
+  let r = d;
+  c.innerHTML = u.map(([n,ms]) => { const v=Math.floor(r/ms); r%=ms; return `<div><b>${v}</b><span>${n}</span></div>`; }).join("");
+}
+compteEnrere(); setInterval(compteEnrere, 1000);
+
+// Sessions
+const ETIQ = { gratis:"Entrada gratuïta", disponible:"Entrades disponibles", poques:"Últimes entrades", esgotat:"Esgotat" };
+$("#llista-sessions").innerHTML = SESSIONS.map(s => `
+  <div class="sessio">
+    <div class="dia">${esc(s.dia)}</div>
+    <div class="hora">${esc(s.hora)}${s.nota?` · ${esc(s.nota)}`:""}</div>
+    <div class="estat ${s.estat}">${ETIQ[s.estat]}</div>
+    ${s.estat==="esgotat" ? `<span class="btn" style="background:#ddd;color:#777">Esgotat</span>`
+                          : `<a class="btn" href="${esc(s.url)}">Com arribar-hi</a>`}
+  </div>`).join("");
+
+// Escenes
+$("#llista-escenes").outerHTML = `<div style="max-width:760px;margin:0 auto;counter-reset:esc">` +
+  (() => { let html="", obert=false;
+    ESCENES.forEach(e => {
+      if (e.acte) { if (obert) html+="</ol>"; html+=`<div class="acte">${esc(e.acte)}</div><ol class="escenes" style="counter-reset:none">`; obert=true; }
+      else html+=`<li data-n="${esc(e.n)}"><h3>Quadre ${esc(e.n)} · ${esc(e.titol)}</h3><p>${esc(e.text)}</p></li>`;
+    });
+    return html + (obert?"</ol>":""); })() + `</div>`;
+
+// Repartiment amb filtres
+const grups = ["Tots", ...new Set(ACTORS.map(a => a.grup))];
+let filtre = "Tots";
+function pintaActors(){
+  $("#filtres").innerHTML = grups.map(g => `<button class="${g===filtre?'on':''}" data-g="${esc(g)}">${esc(g)}</button>`).join("");
+  $("#llista-actors").innerHTML = ACTORS.filter(a => filtre==="Tots" || a.grup===filtre).map(a => `
+    <div class="persona">
+      <div class="foto">${a.img ? imatge(a.img, `${a.nom} (${a.personatge})`) : (a.cara ? cara(a.cara) : imatge("", `${a.nom} (${a.personatge})`))}</div>
+      <div class="personatge">${esc(a.personatge)}</div>
+      <div class="nom">${esc(a.nom)}</div>
+      <div class="grup">${esc(a.grup)}</div>
+    </div>`).join("");
+}
+$("#filtres").addEventListener("click", e => { if (e.target.dataset.g) { filtre = e.target.dataset.g; pintaActors(); } });
+pintaActors();
+
+// Equip
+$("#llista-equip").innerHTML = EQUIP.map(b => `
+  <div class="bloc"><h3>${esc(b.area)}</h3><ul>${b.membres.map(([r,n]) => `<li><span>${esc(r)}</span><span>${esc(n)}</span></li>`).join("")}</ul></div>`).join("");
+
+// Galeria del teatre + lightbox
+$("#galeria").innerHTML = TEATRE_FOTOS.map((f,i) => `<div class="g" data-i="${i}">${imatge(f.img, f.alt)}</div>`).join("");
+$("#galeria").addEventListener("click", e => {
+  const g = e.target.closest(".g"); if (!g) return;
+  const f = TEATRE_FOTOS[g.dataset.i];
+  $("#lb-contingut").innerHTML = imatge(f.img, f.alt); $("#lb").classList.add("open");
+});
+document.querySelector('.poster').addEventListener('click',()=>{ $("#lb-contingut").innerHTML = imatge('img/cartell.jpg','el cartell'); $("#lb").classList.add('open'); });
+function tancaLb(){ $("#lb").classList.remove("open"); }
+document.addEventListener("keydown", e => { if (e.key==="Escape") tancaLb(); });
+
+// Patrocinadors per nivells
+const MIDES = { "Organitza i finança":"mida-gran", "Patrocina":"mida-gran", "En benefici de":"mida-mitja", "Col·labora":"mida-mitja" };
+$("#llista-patro").innerHTML = [...new Set(PATROCINADORS.map(p => p.nivell))].map(n => `
+  <div class="patro-nivell"><h3>${esc(n)}</h3>
+    <div class="logos ${MIDES[n]||'mida-petita'}">
+      ${PATROCINADORS.filter(p => p.nivell===n).map(p => `
+        <a href="${esc(p.url)}" target="_blank" rel="noopener"><div class="caixa">${imatge(p.logo, p.nom, "logo")}</div>${esc(p.nom)}</a>`).join("")}
+    </div></div>`).join("");
+
+// Franja de logos (sota la portada) i logos al peu
+const ETIQ_CURTA = { "Organitza i finança":"Organitza", "Patrocina":"Patrocina", "En benefici de":"En benefici de", "Col·labora":"Col·labora" };
+const ambLogo = PATROCINADORS.filter(p => p.logo);
+$("#franja-logos").insertAdjacentHTML("beforeend", ambLogo.map(p =>
+  `<a href="#patrocinadors" title="${esc(p.nom)}"><img src="${esc(p.logo)}" alt="${esc(p.nom)}">${esc(ETIQ_CURTA[p.nivell]||p.nivell)}</a>`).join(""));
+$("#peu-logos").innerHTML = ambLogo.map(p => `<img src="${esc(p.logo)}" alt="${esc(p.nom)}" title="${esc(p.nom)}">`).join("");
+
+// Tanca el menú mòbil en clicar un enllaç
+document.querySelectorAll("#menu a").forEach(a => a.addEventListener("click", () => $("#menu").classList.remove("open")));
+</script>
+</body>
+</html>
