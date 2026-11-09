@@ -129,6 +129,7 @@
   .galeria .g{aspect-ratio:4/3;border-radius:var(--radi);overflow:hidden;cursor:zoom-in}
   .galeria .g:first-child{grid-column:span 2;grid-row:span 2;aspect-ratio:auto}
   .galeria .g img{width:100%;height:100%;object-fit:cover}
+  .galeria .g.dalt img{object-position:top}
   .galeria .g{position:relative}
   .lb img{max-width:100%}
   @media (max-width:700px){.galeria{grid-template-columns:1fr 1fr}.galeria .g:first-child{grid-column:span 2;grid-row:auto;aspect-ratio:16/9}}
@@ -418,7 +419,7 @@ const TEATRE_FOTOS = [
   { img:"img/escola-aeri-1.jpg", alt:"Vista aèria del Col·legi Salesià Sant Joan Bosco d'Horta" },
   { img:"img/escola-aeri-2.jpg", alt:"El col·legi i el pati des de l'aire" },
   { img:"img/escenari-detall.jpg", alt:"L'escenari del teatre, on es representen Els Pastorets" },
-  { img:"img/escena-anterior.jpg", alt:"Una escena dels Pastorets d'un any anterior al teatre de l'escola" },
+  { img:"img/escena-anterior.jpg", alt:"Una escena dels Pastorets d'un any anterior al teatre de l'escola", dalt:true },
 ];
 
 // nivell: defineix el bloc i la mida del logo
@@ -597,7 +598,7 @@ $("#llista-equip").innerHTML = EQUIP.map(b => `
   <div class="bloc"><h3>${esc(b.area)}</h3><ul>${b.membres.map(([r,n]) => `<li><span>${esc(r)}</span><span>${esc(n)}</span></li>`).join("")}</ul></div>`).join("");
 
 // Galeria del teatre + lightbox
-$("#galeria").innerHTML = TEATRE_FOTOS.map((f,i) => `<div class="g" data-i="${i}">${imatge(f.img, f.alt)}</div>`).join("");
+$("#galeria").innerHTML = TEATRE_FOTOS.map((f,i) => `<div class="g${f.dalt?" dalt":""}" data-i="${i}">${imatge(f.img, f.alt)}</div>`).join("");
 $("#galeria").addEventListener("click", e => {
   const g = e.target.closest(".g"); if (!g) return;
   const f = TEATRE_FOTOS[g.dataset.i];
